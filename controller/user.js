@@ -52,4 +52,4 @@ export const MyProfile=async(req,res)=>{
      success:true,
      user:req.user
   })
-}
+} 
