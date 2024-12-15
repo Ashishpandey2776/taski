@@ -9,7 +9,7 @@ export const isAuth=async(req,res,next)=>{
      })
     }
     const decode=jwt.verify(token,"mysecret")
-     req.user=await User.findOne(decode._id)
+     req.user=await User.findOne({_id:decode._id})
     
     next()
 }

@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { User } from "./user.model";
+import  {User}  from "./user.model.js";
 const TaskSchema=new Schema({
     tittle:{
         type:String,
@@ -12,11 +12,10 @@ const TaskSchema=new Schema({
     status:{
         type:Boolean,
         default:false,
-        require:true
+        required:true
     },
     user:{
-        type:mongoose.Schema.ObjectId,
-        ref:"User"
+        type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true
     },
     createdAt:{
         type:Date,

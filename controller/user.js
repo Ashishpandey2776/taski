@@ -53,3 +53,10 @@ export const MyProfile=async(req,res)=>{
      user:req.user
   })
 } 
+//logout
+export const logoutUser=async(req,res)=>{
+    res.status(201).cookie("token","",{maxage:Date.now}).json({
+        success:true,
+        message:"logout successfull"
+    });
+}
