@@ -8,7 +8,7 @@ export const isAuth=async(req,res,next)=>{
          message:"login first"
      })
     }
-    const decode=jwt.verify(token,"mysecret")
+    const decode=jwt.verify(token,process.env.MY_SECRET)
      req.user=await User.findOne({_id:decode._id})
     
     next()

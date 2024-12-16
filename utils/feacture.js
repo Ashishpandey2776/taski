@@ -6,7 +6,7 @@ export const cookieSet=async(myuser,status=201,message,res)=>{
     res.status(status)
     .cookie("token",token,{
         httpOnly:true,
-        maxAge:15*60*10000
+        maxAge:15*60*10000,
     })
     .json({
         success:true,
