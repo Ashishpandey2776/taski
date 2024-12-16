@@ -4,7 +4,9 @@ import userRouter from "./routes/user.js";
 import taskRouter from "./routes/task.js"
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-import 'dotenv/config'
+import {errorHandler} from "./middlewares/errorHandeler.js"
+
+
 
  const app=express();
  app.use(bodyParser.json()); 
@@ -19,6 +21,8 @@ import 'dotenv/config'
  app.get("/",(req,res)=>{
    res.send("everything looks good");
 });
+
+app.use(errorHandler);
 
  connectDB()
  .then(()=>{
