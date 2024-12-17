@@ -1,5 +1,5 @@
 import { User } from "../modals/user.model.js";
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken";
 import { cookieSet } from "../utils/feacture.js";
 
